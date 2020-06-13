@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {% if edit is defined %}
+        Editar tarea
+    {%else%}
+        Crear tarea
+    {%endif%}
+
+{% endblock %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container h-100 ">
+        <div class="row h-100 justify-content-center align-items-center ">
+            <div class="col-10 bg-white rounded my-3 p-5">
+                {% if edit is defined %}
+                    <h2>Modificar post</h2>
+                {%else%}
+                    <h2>Crear post</h2>
+                {%endif%}
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
